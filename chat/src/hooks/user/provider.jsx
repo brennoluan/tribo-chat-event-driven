@@ -14,7 +14,7 @@ export const UserProvider = ({ children }) => {
       setData((oldData) => ({
         ...oldData,
         chats: oldData.chats.map((chat) => {
-          if (!chat.participants.includes(response.id)) {
+          if (chat.id !== response.chatId) {
             return chat;
           }
 
